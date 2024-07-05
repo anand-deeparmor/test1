@@ -44,3 +44,5 @@ finally:
     connection.close()
 
 print("Connection closed.")
+
+discord? discord = "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
