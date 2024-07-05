@@ -1,0 +1,46 @@
+import mysql.connector
+
+# Database connection details (replace with your own)
+db_name = "your_database_name"
+username = "your_username"
+host = "localhost"  # Change to host IP if your database is not local
+
+try:
+  # Connect to the database
+  connection = mysql.connector.connect(
+      host=host,
+      user=username,
+      database=db_name
+  )
+
+  # Create a cursor object
+  cursor = connection.cursor()
+
+  # Define the table name
+  table_name = "your_table_name"
+
+  # Execute a query to fetch all data from the table
+  cursor.execute(f"SELECT * FROM {table_name}")
+
+  # Fetch all rows as a list of tuples
+  rows = cursor.fetchall()
+
+  # Print column names (optional)
+  column_names = [i[0] for i in cursor.description]
+  print(", ".join(column_names))
+
+  # Print each row
+  for row in rows:
+    print(row)
+
+except mysql.connector.Error as err:
+  print("Error connecting to database:", err)
+
+finally:
+  # Close the cursor and connection (always recommended)
+  if cursor:
+    cursor.close()
+  if connection:
+    connection.close()
+
+print("Connection closed.")
