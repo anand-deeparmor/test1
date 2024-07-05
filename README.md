@@ -9,3 +9,5 @@ commits
 5. Remove the secret in the file
 6. make changes to the file
 7. Make a secret scan of the repo
+
+AIza1234567890AbCdEfGhIjKlMnOpQrStUvW
